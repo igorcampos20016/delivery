@@ -1,0 +1,96 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Igor Campos\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\Igor Campos\Desktop\teste\node_modules\.bin;C:\Users\Igor Campos\Desktop\node_modules\.bin;C:\Users\Igor Campos\node_modules\.bin;C:\Users\node_modules\.bin;C:\node_modules\.bin;C:\Users\Igor Campos\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Users\Igor Campos\AppData\Local\npm-cache\_npx\57f548e2b303d229\node_modules\.bin;C:\Users\Igor Campos\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Igor Campos\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Users\Igor Campos\AppData\Local\Microsoft\WindowsApps;C:\Users\Igor Campos\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Igor Campos\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.8.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.7.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\Igor Campos\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (node:events:626:28)
+      at ClientRequest.emit (node:events:512:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:840:9)
+      at Object.onceWrapper (node:events:626:28)
+      at TLSSocket.emit (node:events:524:35)
+      at Socket._onTimeout (node:net:580:8)
+      at listOnTimeout (node:internal/timers:573:17)
+      at process.processTimers (node:internal/timers:514:7)
+
+npm manifest: 
+  {
+    "name": "teste-api",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@metamodules/postgres": "^1.2.1",
+      "deploy-node-app": "^1.4.3",
+      "dotenv": "^8.0.0",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6",
+      "react-scripts": "3.0.1"
+    },
+    "devDependencies": {
+      "concurrently": "^4.1.0",
+      "nodemon": "^1.19.1",
+      "babel-eslint": "10.0.1",
+      "cross-spawn": "^6.0.5",
+      "eslint": "^5.16.0",
+      "eslint-config-standard": "^12.0.0",
+      "eslint-plugin-flowtype": "2.50.1",
+      "eslint-plugin-import": "2.16.0",
+      "eslint-plugin-node": "^9.1.0",
+      "eslint-plugin-prettier": "^3.1.0",
+      "eslint-plugin-promise": "^4.1.1",
+      "eslint-plugin-standard": "^4.0.0",
+      "prettier": "^1.17.1"
+    },
+    "scripts": {
+      "start": "bash bin/dev.sh",
+      "build": "react-scripts build",
+      "deploy": "deploy-node-app",
+      "test": "react-scripts test",
+      "eject-www": "react-scripts eject",
+      "psql": "export $(cat .env | xargs) && PGPASSWORD=${POSTGRES_PASSWORD} psql -h ${POSTGRES_SERVICE_HOST} -p ${POSTGRES_SERVICE_PORT} -U ${POSTGRES_USER} ${POSTGRES_DB}"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "deploy-node-app": {
+      "prod": {
+        "port": 4000,
+        "protocol": "http",
+        "entrypoint": "src/api/index.js",
+        "type": "spa"
+      },
+      "dev": {
+        "port": 4000,
+        "protocol": "http",
+        "entrypoint": "src/api/index.js",
+        "registry": "",
+        "type": "spa",
+        "isPublic": false
+      }
+    },
+    "proxy": "http://localhost:4000"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
